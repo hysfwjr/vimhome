@@ -1,0 +1,14 @@
+set rtp+=$VIMHOME/vundle/
+call vundle#rc('$VIMHOME/plugin')
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim' 
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'majutsushi/tagbar'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet'
+"Bundle 'scrooloose/syntastic'
+Bundle 'xml.vim'
+Bundle 'ack.vim'
+"Bundle 'Lokaltog/vim-easymotion'
+Bundle 'endel/vim-github-colorscheme'

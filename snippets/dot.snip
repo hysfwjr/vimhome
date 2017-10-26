@@ -1,0 +1,42 @@
+snippet graph
+	graph graphname {
+	    node[color=Blue,fontname=Courier,shape=box];
+	    a -- b -- c;
+	    b -- d;
+	}
+
+snippet digraph
+	digraph graphname {
+	    node[color=Blue,fontname=Courier,shape=box];
+	    a -> b -> c;
+	    b -> d;
+	}
+
+snippet subgraph
+	subgraph inner {
+	    label = "inner";
+	    a[label="a"];
+	    b[label="b"];
+	    {rank=same;a,b}
+	}
+
+snippet node
+	${1}[label="label", color=Blue, fontcolor=Black, fontsize=12, shape=box, style=filled, fillcolor=yellow];
+
+snippet edge
+	${1}[label="label", color=Blue, style=dashed];
+
+snippet dot
+	// size = "4,4"; 全局的size
+	// rankdir=LR; 左右方向，默认是上下方向
+	// nodename[label="label", color=Blue, fontcolor=Black, fontsize=12, shape=box, style=filled, fillcolor=yellow];
+	// a->b[label="label", fontcolor=darkgreen];
+	// shape有box，circle, record等
+	// 颜色可以有darkcolor,color,lightcolor三类
+	// node[color=Blue,fontname=Courier,shape=box]; 定义全局的node都是这个类型
+	// edge[color=Blue, style=dashed]; 定义全局的边
+	// a->{b c d}; 一个结点指向三个结点
+	// struct1 [label="<f0> left|<f1> mid\ dle|<f2> right"]; 定义一个结构，分成三个部分
+	// struct1:f1 -> struct2:f0; 结构之间的指向
+	// subgraph 可以添加一个方框，将几个对象放在方框内
+	// {rank=same; a, b}可以将a和b放在同一个level

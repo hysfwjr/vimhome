@@ -1,0 +1,39 @@
+snippet dag
+	<?xml version="1.0" encoding="UTF-8"?>
+	<DAGFile>
+		<DAG name="" start_partition="" end_partition="" freq="" dead_line="" papi_version="2" etl-framework_version="2">
+		<DataNodes>
+			<DataNode name="" type="" />
+			<DataNode name="" type="" />
+		</DataNodes>
+		<DataFlows>
+			<DataFlow>
+				<StartNodes>
+					<StartNode name=""/>
+				</StartNodes>
+				<EndNodes>
+					<EndNode name=""/>
+				</EndNodes>
+				<Function type="singlemap" xml="/app/ns/udw/etl/etl_framework/xml/" so="/app/ns/udw/etl/etl_framework/so/"/> 
+			</DataFlow>
+			<DataFlow>
+				<StartNodes>
+					<StartNode name=""/>
+				</StartNodes>
+				<EndNodes>
+					<EndNode name=""/>
+				</EndNodes>
+				<Function type="singlemap" xml="/app/ns/udw/etl/etl_framework/xml/" so="/app/ns/udw/etl/etl_framework/so/"/> 
+			</DataFlow>
+			<DataFlow>
+				<StartNodes>
+					<StartNode name=""/>
+				</StartNodes>
+				<EndNodes>
+					<EndNode name=""/>
+				</EndNodes>
+				<Function type="join" xml="/app/ns/udw/etl/etl_framework/xml/fm.xml" so="/app/ns/udw/etl/etl_framework/so/" dispacher="/app/ns/udw/etl/etl_framework/xml/" reducer_num="2000" map_capacity="100000" reduce_capacity="100000" memory="2000" node_distinct=""/>
+			</DataFlow>
+		</DataFlows>
+		</DAG>  
+		</DAGFile>

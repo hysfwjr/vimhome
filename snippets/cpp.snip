@@ -1,0 +1,129 @@
+include c.snip
+
+snippet     template
+abbr        template <T>
+    template<typename ${1:T}> 
+
+snippet     class
+abbr        class {}
+    class ${1:#:name} {
+        ${2}
+    };
+
+snippet     try
+abbr        try catch
+    try {
+        ${1:TARGET}
+    } catch (${2:e:xception}) {
+        ${3}
+    }
+
+# range based for ( C++11 feature )
+snippet     for_CPP11
+abbr        for (:) {}
+    for (${1:#:var} : ${2:#:container}) {
+        ${0:TARGET}
+    }
+
+# lambda expression ( C++11 feature )
+snippet     lambda
+abbr        [](){}
+    [${1}](${2})${3}{ ${4:TARGET} }
+
+# scoped enumeration ( C++11 feature )
+snippet     enum_scoped
+abbr        enum struct {}
+    enum struct { ${1:TARGET} }
+
+# static assert ( C++11 feature )
+snippet     static_assert
+abbr        static_assert(,"")
+    static_assert( ${1}, "${2}" );${0}
+
+delete      namespace
+snippet     namespace
+abbr        namespace {}
+options     head
+    namespace ${1:#:name} {
+        ${0:TARGET}
+    } // namespace $1
+
+snippet     static_cast
+abbr        static_cast<>()
+    static_cast<${1}>(${2})${0}
+
+snippet     reinterpret_cast
+abbr        reinterpret_cast<>()
+    reinterpret_cast<${1}>(${2})${0}
+
+snippet     const_cast
+abbr        const_cast<>()
+    const_cast<${1}>(${2})${0}
+
+snippet     dynamic_cast
+abbr        dynamic_cast<>()
+    dynamic_cast<${1}>(${2})${0}
+
+snippet     helloworld
+abbr        #include<iostream> int main...
+    #include <iostream>
+    int main(int argc, char const* argv[])
+    {
+        using namespace std;
+        cout << "hello, world!" << endl;
+        return 0;
+    }
+
+snippet iiostream
+	#include <iostream>
+	${1}
+
+snippet ivector
+	#include <vector>
+	${1}
+
+snippet istring
+	#include <string>
+	${1}
+
+snippet ialgorithm
+	#include <algorithm>
+	${1}
+
+snippet out
+	std::cout << ${1} << std::endl;
+
+snippet cerr
+	std::cerr << ${1} << std::endl;
+
+snippet print
+	template<typename T>
+	class print
+	{
+		public:
+			void operator()(const T& value)
+			{
+				std::cout << value << std::endl;
+			}
+	};
+
+snippet gtest
+	#include "gtest/gtest.h"
+
+	class ${1} : public testing::Test {
+		public:
+			static void SetUpTestCase(){}
+			static void TearDownTestCase(){}
+			virtual void SetUp(){}
+			virtual void TearDown(){}   
+	};
+
+	int main(int argc, char **argv) {
+		testing::InitGoogleTest(&argc, argv);
+		testing::FLAGS_gtest_death_test_style = "threadsafe";
+		return RUN_ALL_TESTS();
+	};
+
+	TEST_F(${2}, Test0) {
+		EXPECT_EQ(${3}, ${4});
+	}
